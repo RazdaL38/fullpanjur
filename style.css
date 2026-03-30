@@ -1,58 +1,46 @@
 :root {
-    --primary: #f97316; /* Turuncu */
+    --primary: #f97316;
     --dark: #111111;
     --light: #1f1f1f;
     --text: #f3f4f6;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
-body { font-family: 'Inter', sans-serif; background-color: var(--light); color: var(--text); overflow-x: hidden; }
+body { font-family: 'Inter', sans-serif; background: var(--light); color: var(--text); overflow-x: hidden; }
 
-/* --- AKILLI NAVBAR --- */
+/* Navbar - Siyah ve Net */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 25px 8%;
-    background: rgba(17, 17, 17, 0.8); /* Yarı şeffaf siyah */
-    backdrop-filter: blur(10px); /* Arkayı bulanıklaştırır (Cam efekti) */
+    padding: 20px 8%;
+    background: var(--dark);
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    transition: 0.4s ease;
-    border-bottom: 1px solid rgba(249, 115, 22, 0.1);
+    border-bottom: 1px solid rgba(249, 115, 22, 0.2);
 }
 
-/* LOGO KURTARICI: Logonun arkasına hafif bir aydınlık verir */
-.logo img {
+/* LOGO: Siyah zeminde her zaman parlayan ayar */
+.glow-logo {
     height: 60px;
+    /* Alttaki satır logonun etrafına sürekli turuncu bir ışık verir */
+    filter: drop-shadow(0 0 8px var(--primary)); 
     transition: 0.3s;
-    background: rgba(255, 255, 255, 0.05); /* Çok hafif bir beyazlık */
-    padding: 5px;
-    border-radius: 10px;
-    /* Alttaki satır logoyu siyah zeminde bile patlatır */
-    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3)); 
 }
 
-.logo img:hover {
+.glow-logo:hover {
     filter: drop-shadow(0 0 15px var(--primary));
     transform: scale(1.05);
 }
 
 .nav-links { display: flex; list-style: none; }
 .nav-links li { margin-left: 30px; }
-.nav-links a {
-    text-decoration: none;
-    color: white;
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: 0.3s;
-    letter-spacing: 1px;
-}
+.nav-links a { text-decoration: none; color: white; font-weight: 600; }
 .nav-links a:hover { color: var(--primary); }
 
-/* --- HERO & DİĞERLERİ --- */
+/* İçerik Alanları */
 .hero-advanced {
     height: 100vh;
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1500') center/cover;
@@ -60,18 +48,31 @@ nav {
 }
 
 .hero-overlay {
-    text-align: center; padding: 50px;
-    background: rgba(0, 0, 0, 0.4);
-    border-radius: 30px;
-    border: 1px solid rgba(249, 115, 22, 0.3);
+    text-align: center; padding: 40px; background: rgba(17, 17, 17, 0.8);
+    border-radius: 20px; border: 1px solid var(--primary);
 }
 
-.btn-primary { padding: 14px 35px; background: var(--primary); color: white; text-decoration: none; border-radius: 8px; font-weight: bold; margin: 10px; display: inline-block; transition: 0.3s; }
-.btn-primary:hover { box-shadow: 0 0 20px rgba(249, 115, 22, 0.6); transform: translateY(-3px); }
+.hero-overlay h1 span { color: var(--primary); }
 
-.about-section { padding: 150px 8% 80px; background: var(--dark); }
-.reveal { opacity: 0; transform: translateY(40px); transition: 0.8s ease; }
-.reveal.active { opacity: 1; transform: translateY(0); }
+.btn-primary { padding: 12px 30px; background: var(--primary); color: white; text-decoration: none; border-radius: 5px; font-weight: bold; margin: 10px; display: inline-block; }
+.btn-secondary { padding: 12px 30px; border: 2px solid var(--primary); color: var(--primary); text-decoration: none; border-radius: 5px; font-weight: bold; margin: 10px; display: inline-block; }
+
+.about-section { padding: 120px 8%; background: var(--dark); }
+.mission-vision { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 30px 0; }
+.mv-item { background: var(--light); padding: 20px; border-radius: 10px; border-left: 4px solid var(--primary); }
 
 .stats { display: flex; gap: 40px; margin-top: 30px; }
 .stat-item h3 { font-size: 2.5rem; color: var(--primary); }
+
+/* Kartlar ve Animasyonlar */
+.services-advanced { padding: 80px 8%; text-align: center; }
+.service-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+.s-card { background: var(--dark); padding: 40px; border-radius: 15px; transition: 0.3s; border: 1px solid transparent; }
+.s-card:hover { border-color: var(--primary); transform: translateY(-10px); }
+.s-card i { font-size: 3rem; color: var(--primary); margin-bottom: 20px; }
+
+.reveal { opacity: 0; transform: translateY(40px); transition: 0.8s; }
+.reveal.active { opacity: 1; transform: translateY(0); }
+
+footer { background: #000; padding: 60px 8% 20px; border-top: 2px solid var(--primary); }
+.footer-bottom { text-align: center; margin-top: 40px; color: #555; }

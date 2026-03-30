@@ -1,104 +1,77 @@
 :root {
-    --primary: #f97316;
+    --primary: #f97316; /* Turuncu */
     --dark: #111111;
     --light: #1f1f1f;
     --text: #f3f4f6;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; background-color: var(--light); color: var(--text); overflow-x: hidden; }
 
-body {
-    font-family: 'Inter', sans-serif;
-    background-color: var(--light);
-    color: var(--text);
-    line-height: 1.6;
-    overflow-x: hidden;
-}
-
-/* --- BEYAZ NAVBAR AYARLARI --- */
+/* --- AKILLI NAVBAR --- */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 8%;
-    background: #ffffff; /* Navbar Beyaz Oldu */
+    padding: 25px 8%;
+    background: rgba(17, 17, 17, 0.8); /* Yarı şeffaf siyah */
+    backdrop-filter: blur(10px); /* Arkayı bulanıklaştırır (Cam efekti) */
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     transition: 0.4s ease;
+    border-bottom: 1px solid rgba(249, 115, 22, 0.1);
 }
 
+/* LOGO KURTARICI: Logonun arkasına hafif bir aydınlık verir */
 .logo img {
-    height: 65px; /* Logo beyazda daha net görünsün diye hafif büyüttüm */
+    height: 60px;
     transition: 0.3s;
+    background: rgba(255, 255, 255, 0.05); /* Çok hafif bir beyazlık */
+    padding: 5px;
+    border-radius: 10px;
+    /* Alttaki satır logoyu siyah zeminde bile patlatır */
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3)); 
 }
 
-.nav-links {
-    display: flex;
-    list-style: none;
+.logo img:hover {
+    filter: drop-shadow(0 0 15px var(--primary));
+    transform: scale(1.05);
 }
 
+.nav-links { display: flex; list-style: none; }
 .nav-links li { margin-left: 30px; }
 .nav-links a {
     text-decoration: none;
-    color: #111111; /* Yazılar Siyah Oldu */
-    font-weight: 700;
+    color: white;
+    font-weight: 600;
+    font-size: 0.95rem;
     transition: 0.3s;
+    letter-spacing: 1px;
 }
 .nav-links a:hover { color: var(--primary); }
 
-/* --- DİĞER BÖLÜMLER --- */
+/* --- HERO & DİĞERLERİ --- */
 .hero-advanced {
     height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1500') center/cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1500') center/cover;
+    display: flex; align-items: center; justify-content: center;
 }
 
 .hero-overlay {
-    text-align: center;
-    padding: 50px;
-    background: rgba(17, 17, 17, 0.85);
-    border-radius: 20px;
-    border: 1px solid var(--primary);
-    animation: fadeInDown 1s ease-out;
+    text-align: center; padding: 50px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 30px;
+    border: 1px solid rgba(249, 115, 22, 0.3);
 }
 
-.hero-overlay h1 { font-size: 3.5rem; margin-bottom: 20px; color: white; }
-.hero-overlay span { color: var(--primary); }
+.btn-primary { padding: 14px 35px; background: var(--primary); color: white; text-decoration: none; border-radius: 8px; font-weight: bold; margin: 10px; display: inline-block; transition: 0.3s; }
+.btn-primary:hover { box-shadow: 0 0 20px rgba(249, 115, 22, 0.6); transform: translateY(-3px); }
 
-.btn-primary { padding: 14px 35px; background: var(--primary); color: white; text-decoration: none; border-radius: 5px; font-weight: bold; margin: 10px; display: inline-block; }
-.btn-secondary { padding: 14px 35px; border: 2px solid var(--primary); color: var(--primary); text-decoration: none; border-radius: 5px; font-weight: bold; margin: 10px; display: inline-block; }
-
-.about-section { padding: 150px 8% 80px; background: var(--dark); } /* Padding arttı ki navbar altına girmesin */
-.about-text h2 { color: var(--primary); margin-bottom: 25px; font-size: 2.5rem; }
-
-.mission-vision { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin: 40px 0; }
-.mv-item { background: var(--light); padding: 25px; border-radius: 12px; border-left: 5px solid var(--primary); }
-.mv-item h3 { color: var(--primary); margin-bottom: 12px; }
-
-.stats { display: flex; gap: 50px; margin-top: 40px; }
-.stat-item h3 { font-size: 3rem; color: var(--primary); }
-
-.services-advanced { padding: 100px 8%; text-align: center; }
-.section-title { margin-bottom: 60px; font-size: 2.5rem; color: var(--primary); }
-
-.service-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-.s-card { background: var(--dark); padding: 50px 30px; border-radius: 20px; border: 1px solid #333; transition: 0.4s; }
-.s-card:hover { transform: translateY(-15px); border-color: var(--primary); }
-.s-card i { font-size: 3.5rem; color: var(--primary); margin-bottom: 25px; transition: 0.5s; }
-.s-card:hover i { transform: rotateY(360deg); }
-
-.reveal { opacity: 0; transform: translateY(60px); transition: 0.8s ease-out; }
+.about-section { padding: 150px 8% 80px; background: var(--dark); }
+.reveal { opacity: 0; transform: translateY(40px); transition: 0.8s ease; }
 .reveal.active { opacity: 1; transform: translateY(0); }
 
-footer { background: #000; padding: 70px 8% 30px; border-top: 3px solid var(--primary); }
-.footer-bottom { text-align: center; margin-top: 50px; color: #555; padding-top: 20px; border-top: 1px solid #222; }
+.stats { display: flex; gap: 40px; margin-top: 30px; }
+.stat-item h3 { font-size: 2.5rem; color: var(--primary); }

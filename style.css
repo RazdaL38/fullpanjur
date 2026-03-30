@@ -35,10 +35,40 @@ nav {
     transform: scale(1.05);
 }
 
-.nav-links { display: flex; list-style: none; }
-.nav-links li { margin-left: 30px; }
-.nav-links a { text-decoration: none; color: white; font-weight: 600; }
-.nav-links a:hover { color: var(--primary); }
+/* Navbar Linkleri Fade Efekti */
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    
+    /* İŞTE SİHİRLİ SATIR: 0.4 saniyede yumuşak geçiş yapar */
+    transition: all 0.4s ease-in-out; 
+    
+    position: relative;
+}
+
+.nav-links a:hover {
+    color: var(--primary); /* Turuncuya yumuşakça döner */
+    text-shadow: 0 0 10px rgba(249, 115, 22, 0.5); /* Hafif bir parlama ekler */
+}
+
+/* İstersen altına ince bir çizgi efekti de ekleyebilirsin (Opsiyonel) */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--primary);
+    transition: width 0.4s ease-in-out;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
 
 /* İçerik Alanları */
 .hero-advanced {

@@ -88,6 +88,25 @@ nav {
     height: 100vh;
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1500') center/cover;
     display: flex; align-items: center; justify-content: center;
+    position: relative; /* Arka plan logosu için pozisyon */
+}
+
+/* YENİ EKLEME: Arka Plan Logosu */
+.hero-advanced::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%; /* Logonun ne kadar büyük olacağı */
+    height: 80%;
+    background-image: url('logo.png'); /* Logo dosyanın adı buraya */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0.03; /* Çok hafif görünmesi için şeffaflık (0.01 ile 0.05 arası iyidir) */
+    z-index: 1; /* Yazının arkasında kalması için */
+    filter: drop-shadow(0 0 30px rgba(249, 115, 22, 0.2)); /* Hafif bir ışıltı efekti */
 }
 
 .hero-overlay {
@@ -95,6 +114,8 @@ nav {
     background: rgba(17, 17, 17, 0.4); backdrop-filter: blur(15px);
     border-radius: 30px; border: 1px solid rgba(255,255,255,0.1);
     box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    position: relative;
+    z-index: 2; /* Arka plan logosunun önünde kalması için */
 }
 .hero-overlay h1 { font-size: 3rem; margin-bottom: 20px; line-height: 1.2; }
 .hero-overlay h1 span { color: var(--primary); }

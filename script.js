@@ -1,22 +1,20 @@
-const counters = document.querySelectorAll('.counter');
-const reveals = document.querySelectorAll(".reveal");
-const aboutSection = document.querySelector('.about-section');
-let started = false;
-
-window.addEventListener('scroll', () => {
-    // 1. Reveal Efekti
+// Sayfa yüklendiği anda animasyonları başlatır (scroll beklemez)
+document.addEventListener("DOMContentLoaded", () => {
+    // 1. Reveal Efekti (Sayfa açıldığında direkt gelsin)
+    const reveals = document.querySelectorAll(".reveal");
     reveals.forEach(el => {
-        if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+        // Hafif bir gecikme ile daha şık gelir
+        setTimeout(() => {
             el.classList.add("active");
-        }
+        }, 150);
     });
 
-    // 2. Sayaçlar
-    if (aboutSection && window.scrollY > aboutSection.offsetTop - 600 && !started) {
-        started = true; // Sadece bir kere çalışmasını garantiliyoruz
+    // 2. Sayaçlar (Sadece Hakkımızda sayfasında çalışır)
+    const counters = document.querySelectorAll('.counter');
+    if (counters.length > 0) {
         counters.forEach(counter => {
             const target = +counter.getAttribute('data-target');
-            const increment = target / 100; // Sayma hızı ayarı
+            const increment = target / 100; // Hız ayarı
             
             const updateCount = () => {
                 const count = +counter.innerText;
@@ -27,7 +25,8 @@ window.addEventListener('scroll', () => {
                     counter.innerText = target; 
                 }
             };
-            updateCount();
+            // Animasyonla beraber başlaması için kısa bir gecikme
+            setTimeout(updateCount, 500);
         });
     }
 });

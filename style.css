@@ -102,3 +102,16 @@ footer { background: #080808; padding: 80px 10% 30px; border-top: 1px solid rgba
 .footer-content { display: flex; justify-content: space-between; margin-bottom: 50px; }
 .footer-info h3 span { color: var(--primary); }
 .footer-bottom { text-align: center; color: #444; font-size: 0.8rem; border-top: 1px solid #111; padding-top: 30px; }
+
+/* Alt sayfalardaki içeriklerin görünmesi için gereken padding */
+.page-content {
+    padding-top: 180px !important; /* Navbar'ın altında kalmasın diye */
+    min-height: 80vh;
+    display: block;
+}
+
+/* Reveal sınıfı default olarak görünür kalsın (alt sayfalarda scroll beklemesin diye) */
+.active {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}

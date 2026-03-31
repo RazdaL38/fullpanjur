@@ -86,6 +86,13 @@ nav {
     margin-top: 20px;
 }
 
+.s-card {
+    background: var(--light); padding: 50px 30px; border-radius: 25px; 
+    transition: 0.5s; border: 1px solid rgba(255,255,255,0.03); text-align: center;
+}
+.s-card:hover { transform: translateY(-15px); border-color: var(--primary); background: #222; }
+.s-card i { font-size: 3.5rem; color: var(--primary); margin-bottom: 25px; }
+
 /* Reveal Animasyonu */
 .reveal { opacity: 0; transform: translateY(50px); transition: 1s cubic-bezier(0.17, 0.67, 0.83, 0.67); }
 .reveal.active { opacity: 1; transform: translateY(0); }

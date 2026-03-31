@@ -8,26 +8,34 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-
-    <nav id="navbar" class="scrolled">
+    <nav id="navbar">
         <div class="logo">
-            <a href="index.html"><img src="logo.png" alt="FullPanjur Logo"></a>
+            <a href="index.html"><img src="logo.png" alt="FullPanjur Logo" class="glow-logo"></a>
         </div>
         <ul class="nav-links">
             <li><a href="index.html">Anasayfa</a></li>
             <li><a href="hakkimizda.html">Hakkımızda</a></li>
             <li><a href="hizmetler.html">Hizmetler</a></li>
-            <li><a href="iletisim.html">İletişim</a></li>
+            <li><a href="iletisim.html" class="active-link">İletişim</a></li>
         </ul>
     </nav>
 
-    <section class="page-content" style="text-align: center; padding: 150px 8%;">
-        <h2 style="color: var(--primary); margin-bottom: 30px;">BİZE ULAŞIN</h2>
-        <div class="footer-contact" style="display: inline-block; text-align: left;">
-            <p><i class="fas fa-map-marker-alt"></i> İstanbul, Türkiye</p>
-            <p><i class="fas fa-phone"></i> +90 (212) 000 00 00</p>
-            <p><i class="fas fa-envelope"></i> info@fullpanjur.com</p>
-        </div>
+    <section class="reveal page-content" style="background: var(--dark); padding-bottom: 0;">
+        <footer id="iletisim" style="border-top: none; padding-top: 50px;">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>FULL<span>PANJUR</span></h3>
+                    <p>Kusursuz işçilik, kaliteli malzeme.</p>
+                </div>
+                <div class="footer-contact">
+                    <h4>İletişim Bilgileri</h4>
+                    <p><i class="fas fa-phone"></i> +90 (212) 000 00 00</p>
+                    <p><i class="fas fa-envelope"></i> info@fullpanjur.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> İstanbul, Türkiye</p>
+                </div>
+            </div>
+            <div class="footer-bottom">© 2026 FullPanjur | Tüm Hakları Saklıdır.</div>
+        </footer>
     </section>
 
     <script src="script.js"></script>

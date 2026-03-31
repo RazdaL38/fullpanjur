@@ -3,33 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hizmetlerimiz | FullPanjur</title>
+    <title>Hizmetler | FullPanjur</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-
-    <nav id="navbar" class="scrolled">
+    <nav id="navbar">
         <div class="logo">
-            <a href="index.html"><img src="logo.png" alt="FullPanjur Logo"></a>
+            <a href="index.html"><img src="logo.png" alt="FullPanjur Logo" class="glow-logo"></a>
         </div>
         <ul class="nav-links">
             <li><a href="index.html">Anasayfa</a></li>
             <li><a href="hakkimizda.html">Hakkımızda</a></li>
-            <li><a href="hizmetler.html">Hizmetler</a></li>
+            <li><a href="hizmetler.html" class="active-link">Hizmetler</a></li>
             <li><a href="iletisim.html">İletişim</a></li>
         </ul>
     </nav>
 
-    <section class="services-advanced page-content">
-        <h2 class="section-title">Üretim Portföyümüz</h2>
+    <section id="hizmetler" class="services-advanced reveal page-content">
+        <h2 class="section-title">Hizmetlerimiz</h2>
         <div class="service-container">
-            <div class="s-card"><i class="fas fa-bars"></i><h3>Panjur Sistemleri</h3><p>Mono blok, dıştan takma ve motorlu seçenekler.</p></div>
-            <div class="s-card"><i class="fas fa-door-closed"></i><h3>Kepenk & Kapı</h3><p>Güvenli çelik kepenk ve fotoselli kapı sistemleri.</p></div>
-            <div class="s-card"><i class="fas fa-border-all"></i><h3>Cam Balkon</h3><p>Isıcamlı, sürme ve katlanır seriler.</p></div>
-            <div class="s-card"><i class="fas fa-bug"></i><h3>Sineklik</h3><p>Her pencereye uygun modern sineklik çözümleri.</p></div>
+            <div class="s-card"><i class="fas fa-bars"></i><h3>Panjur & Kepenk</h3><p>Modern ve güvenli sistemler.</p></div>
+            <div class="s-card"><i class="fas fa-layer-group"></i><h3>Doğrama</h3><p>Isı yalıtımlı alüminyum çözümler.</p></div>
+            <div class="s-card"><i class="fas fa-border-all"></i><h3>Cam Balkon</h3><p>Katlanır ve ısıcamlı seriler.</p></div>
         </div>
     </section>
+
+    <footer id="iletisim">
+        <div class="footer-bottom">© 2026 FullPanjur | Tüm Hakları Saklıdır.</div>
+    </footer>
 
     <script src="script.js"></script>
 </body>

@@ -1,32 +1,37 @@
-// Sayfa yüklendiği anda animasyonları başlatır (scroll beklemez)
-document.addEventListener("DOMContentLoaded", () => {
-    // 1. Reveal Efekti (Sayfa açıldığında direkt gelsin)
+window.addEventListener('scroll', () => {
     const reveals = document.querySelectorAll(".reveal");
-    reveals.forEach(el => {
-        // Hafif bir gecikme ile daha şık gelir
-        setTimeout(() => {
-            el.classList.add("active");
-        }, 150);
+    const counters = document.querySelectorAll('.counter');
+    const triggerBottom = window.innerHeight / 5 * 4;
+
+    // 1. Reveal Efekti
+    reveals.forEach(reveal => {
+        const revealTop = reveal.getBoundingClientRect().top;
+        if (revealTop < triggerBottom) {
+            reveal.classList.add("active");
+        }
     });
 
-    // 2. Sayaçlar (Sadece Hakkımızda sayfasında çalışır)
-    const counters = document.querySelectorAll('.counter');
-    if (counters.length > 0) {
+    // 2. Sayı Sayma Efekti
+    const aboutSection = document.querySelector('.about-section');
+    if (aboutSection.classList.contains('active')) {
         counters.forEach(counter => {
-            const target = +counter.getAttribute('data-target');
-            const increment = target / 100; // Hız ayarı
-            
-            const updateCount = () => {
-                const count = +counter.innerText;
-                if (count < target) {
-                    counter.innerText = Math.ceil(count + increment);
-                    setTimeout(updateCount, 20);
-                } else { 
-                    counter.innerText = target; 
-                }
-            };
-            // Animasyonla beraber başlaması için kısa bir gecikme
-            setTimeout(updateCount, 500);
+            if (counter.innerText === "0") { // Eğer daha önce saymadıysa
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText;
+                    const speed = target / 100;
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + speed);
+                        setTimeout(updateCount, 25);
+                    } else { counter.innerText = target; }
+                };
+                updateCount();
+            }
         });
     }
 });
+
+// Sayfa yüklendiğinde Hero kısmını direkt göster
+window.onload = () => {
+    document.querySelector('.hero-overlay').classList.add('active');
+};

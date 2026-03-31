@@ -138,7 +138,7 @@ nav {
 .stat-item h3 { font-size: 3rem; color: var(--primary); margin-bottom: 5px; }
 
 .section-title { margin-bottom: 60px; font-size: 2.8rem; color: var(--primary); text-align: center; text-transform: uppercase; }
-.service-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+.service-container { display: flex; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
 .s-card {
     background: var(--light); padding: 50px 30px; border-radius: 25px; 
     transition: 0.5s; border: 1px solid rgba(255,255,255,0.03); text-align: center;

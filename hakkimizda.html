@@ -2,22 +2,59 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>Hakkımızda Detay | FullPanjur</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hakkımızda | FullPanjur</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body style="background: var(--dark);">
-    <nav id="navbar" style="background: #111; padding: 10px 8%;">
-        <div class="logo"><a href="index.html"><img src="logo.png" alt="Logo"></a></div>
+<body>
+    <nav id="navbar">
+        <div class="logo">
+            <a href="index.html"><img src="logo.png" alt="FullPanjur Logo" class="glow-logo"></a>
+        </div>
         <ul class="nav-links">
-            <li><a href="index.html">Anasayfaya Dön</a></li>
+            <li><a href="index.html">Anasayfa</a></li>
+            <li><a href="hakkimizda.html" class="active-link">Hakkımızda</a></li>
+            <li><a href="hizmetler.html">Hizmetler</a></li>
+            <li><a href="iletisim.html">İletişim</a></li>
         </ul>
     </nav>
-    <section class="about-section" style="padding-top: 150px; min-height: 100vh;">
-        <div class="container" style="max-width: 900px; margin: 0 auto; padding: 0 20px;">
-            <h2 style="color: var(--primary); font-size: 3rem; margin-bottom: 30px;">BİZ KİMİZ?</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 20px;">2012 yılında Full Dekor ismiyle başlayan yolculuğumuz...</p>
+
+    <section id="hakkimizda" class="about-section reveal page-content">
+        <div class="container">
+            <div class="about-text">
+                <h2>BİZ KİMİZ?</h2>
+                <p>2012 yılında <strong>Full Dekor</strong> ismiyle başlayan hikayemiz, 2017 yılında <strong>Full Panjur</strong> olarak devleşti. Alüminyum ve kepenk sistemlerinde profesyonel çözümler sunuyoruz.</p>
+                
+                <div class="mission-vision">
+                    <div class="mv-item">
+                        <h3><i class="fas fa-bullseye"></i> MİSYONUMUZ</h3>
+                        <p>Minimum sıkıntı, maksimum memnuniyet ilkesiyle çalışıyoruz.</p>
+                    </div>
+                    <div class="mv-item">
+                        <h3><i class="fas fa-eye"></i> VİZYONUMUZ</h3>
+                        <p>Kaliteden ödün vermeden ürün çeşitliliğimizi her geçen gün arttırmak.</p>
+                    </div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-item">
+                        <h3 class="counter" data-target="2012">0</h3>
+                        <p>Kuruluş</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3 class="counter" data-target="100">0</h3>
+                        <p>Memnuniyet %</p>
+                    </div>
+                </div>
             </div>
+        </div>
     </section>
+
+    <footer id="iletisim">
+        <div class="footer-bottom">© 2026 FullPanjur | Tüm Hakları Saklıdır.</div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

@@ -62,8 +62,9 @@ nav {
 /* --- 3. HERO / ARKA PLAN --- */
 .hero-advanced { 
     height: 100vh; 
-    background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)), 
-                url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=1500') center/cover no-repeat fixed; 
+    /* Kendi resim dosyan varsa: url('resim-adi.jpg') yapabilirsin */
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), 
+                url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1500') center/cover no-repeat fixed; 
     display: flex; 
     align-items: center; 
     justify-content: center;

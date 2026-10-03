@@ -3,62 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>İletişim | FullPanjur</title>
+    <title>İletişim - FullPanjur</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
+    <!-- PRELOADER -->
     <div id="preloader">
-        <div class="loader-content">
+        <div style="text-align: center;">
             <img src="logo.png" alt="FullPanjur Logo" class="loader-logo">
             <div class="loader-bar"></div>
         </div>
     </div>
 
-    <nav id="navbar">
-        <div class="logo">
-            <a href="index.html"><img src="logo.png" alt="FullPanjur Logo" class="glow-logo"></a>
+    <!-- NAVBAR -->
+    <nav>
+        <a href="index.html"><img src="logo.png" alt="FullPanjur Logo" class="glow-logo"></a>
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fas fa-bars"></i>
         </div>
         <ul class="nav-links">
-            <li><a href="index.html#home">Anasayfa</a></li>
+            <li><a href="index.html">Anasayfa</a></li>
             <li><a href="hakkimizda.html">Hakkımızda</a></li>
-            <li><a href="hizmetler.html">Hizmetler</a></li>
-            <li><a href="iletisim.html">İletişim</a></li>
+            <li><a href="hizmetler.html">Hizmetlerimiz</a></li>
+            <li><a href="galeri.html">Projelerimiz</a></li>
+            <li><a href="iletisim.html" style="color: var(--primary); font-weight: bold;">İletişim</a></li>
         </ul>
     </nav>
 
-    <section class="page-content reveal active" style="padding-top: 180px; text-align: center;">
-        <h2 style="color: var(--primary); font-size: 3rem; margin-bottom: 50px;">BİZE ULAŞIN</h2>
-        
-        <div class="footer-content" style="display: flex; justify-content: space-around; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; padding: 0 20px;">
-            <div class="contact-card" style="background: var(--light); padding: 40px; border-radius: 20px; border: 1px solid var(--primary); min-width: 300px; margin: 20px;">
-                <i class="fas fa-phone" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 20px;"></i>
+    <!-- İLETİŞİM VE HARİTA BÖLÜMÜ -->
+    <section class="page-content reveal active" style="padding-top: 150px;">
+        <h2 style="color: var(--primary); font-size: 2.8rem; text-align: center; margin-bottom: 40px;">BİZE ULAŞIN</h2>
+
+        <!-- İletişim Kartları -->
+        <div class="contact-cards-container">
+            <div class="contact-card">
+                <i class="fas fa-phone"></i>
                 <h3>Telefon</h3>
-                <p style="margin-top: 15px; font-size: 1.2rem;">+90 (212) 000 00 00</p>
+                <p>+90 (212) 000 00 00</p>
             </div>
-
-            <div class="contact-card" style="background: var(--light); padding: 40px; border-radius: 20px; border: 1px solid var(--primary); min-width: 300px; margin: 20px;">
-                <i class="fas fa-envelope" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 20px;"></i>
+            <div class="contact-card">
+                <i class="fas fa-envelope"></i>
                 <h3>E-Posta</h3>
-                <p style="margin-top: 15px; font-size: 1.2rem;">info@fullpanjur.com</p>
+                <p>info@fullpanjur.com</p>
             </div>
-
-            <div class="contact-card" style="background: var(--light); padding: 40px; border-radius: 20px; border: 1px solid var(--primary); min-width: 300px; margin: 20px;">
-                <i class="fas fa-map-marker-alt" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 20px;"></i>
+            <div class="contact-card">
+                <i class="fas fa-map-marker-alt"></i>
                 <h3>Adres</h3>
-                <p style="margin-top: 15px; font-size: 1.2rem;">İstanbul, Türkiye</p>
+                <p>İstanbul, Türkiye</p>
+            </div>
+        </div>
+
+        <!-- Google Harita (Maps) -->
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <div class="map-container" style="height: 500px; width: 100%;">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d192697.79327632127!2d28.87180470533535!3d41.00537021644787!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caa7040068086b%3A0xe1cc7a23c8f057a1!2s%C4%B0stanbul!5e0!3m2!1str!2str!4v1700000000000!5m2!1str!2str" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0; border-radius: 20px;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
             </div>
         </div>
     </section>
 
-    <footer style="margin-top: 100px;">
-        <div class="footer-bottom">© 2026 FullPanjur | Tüm Hakları Saklıdır.</div>
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2026 FullPanjur. Tüm Hakları Saklıdır.</p>
+        </div>
     </footer>
 
-    <script src="script.js"></script>
-    <a href="https://wa.me/905495011919" class="whatsapp-float" target="_blank" title="WhatsApp ile İletişime Geçin">
+    <!-- SABİT WHATSAPP BUTONU -->
+    <a href="https://wa.me/905000000000" class="whatsapp-float" target="_blank" title="WhatsApp ile İletişime Geçin">
         <i class="fab fa-whatsapp"></i>
     </a>
+
+    <script src="script.js"></script>
 </body>
 </html>

@@ -4,10 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>İletişim - FullPanjur</title>
-    <!-- CSS Dosyası Bağlantısı -->
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- İletişim Sayfası Garanti Stiller -->
+    <style>
+        .contact-cards-container {
+            display: flex !important;
+            justify-content: center !important;
+            align-items: stretch !important;
+            flex-wrap: wrap !important;
+            gap: 25px !important;
+            max-width: 1200px !important;
+            margin: 0 auto 40px !important;
+            padding: 0 20px !important;
+        }
+        .contact-card {
+            background: #1a1d23 !important;
+            padding: 35px 25px !important;
+            border-radius: 20px !important;
+            border: 1px solid rgba(247, 91, 7, 0.3) !important;
+            flex: 1 1 280px !important;
+            max-width: 360px !important;
+            text-align: center !important;
+            transition: 0.3s ease !important;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3) !important;
+        }
+        .contact-card:hover {
+            border-color: #f75b07 !important;
+            transform: translateY(-8px) !important;
+            box-shadow: 0 15px 35px rgba(247, 91, 7, 0.2) !important;
+        }
+        .contact-card i {
+            font-size: 2.5rem !important;
+            color: #f75b07 !important;
+            margin-bottom: 20px !important;
+            display: block !important;
+        }
+        .contact-card h3 {
+            color: #ffffff !important;
+            font-size: 1.3rem !important;
+            margin-bottom: 10px !important;
+        }
+        .contact-card p {
+            color: #cccccc !important;
+            font-size: 1rem !important;
+            margin: 0 !important;
+        }
+    </style>
 </head>
 <body>
 
@@ -35,7 +80,7 @@
     </nav>
 
     <!-- İLETİŞİM BÖLÜMÜ -->
-    <section class="page-content reveal active">
+    <section class="page-content reveal active" style="padding-top: 150px;">
         <h2 style="color: var(--primary); font-size: 2.8rem; text-align: center; margin-bottom: 40px;">BİZE ULAŞIN</h2>
 
         <!-- İletişim Kartları -->
@@ -59,12 +104,12 @@
 
         <!-- Google Harita (Maps) -->
         <div style="max-width: 1200px; margin: 40px auto 0; padding: 0 20px;">
-            <div class="map-container" style="height: 450px; width: 100%;">
+            <div style="height: 450px; width: 100%; border-radius: 20px; overflow: hidden; border: 1px solid rgba(247, 91, 7, 0.3);">
                 <iframe 
                     src="https://maps.google.com/maps?q=Full%20Panjur%20Dudullu%20OSB&t=&z=15&ie=UTF8&iwloc=&output=embed" 
                     width="100%" 
                     height="100%" 
-                    style="border:0; border-radius: 20px;" 
+                    style="border:0;" 
                     allowfullscreen="" 
                     loading="lazy">
                 </iframe>

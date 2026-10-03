@@ -1,5 +1,5 @@
-/* FullPanjur Modern Stil Dosyası - v3.1
-   Geliştirme: Mobil Menü (Hamburger Menu) Desteği Eklendi
+/* FullPanjur Modern Stil Dosyası - v3.2
+   Güncelleme: Çift hero-advanced çakışması düzeltildi + Sabit WhatsApp Butonu eklendi
 */
 
 :root {
@@ -59,7 +59,7 @@ nav {
 }
 .menu-toggle:hover { color: var(--primary); }
 
-/* --- 3. ARKA PLAN LOGO / HERO --- */
+/* --- 3. HERO / ARKA PLAN --- */
 .hero-advanced { 
     height: 100vh; 
     background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)), 
@@ -69,6 +69,14 @@ nav {
     justify-content: center;
     border-bottom: 2px solid var(--primary);
 }
+
+.hero-overlay { text-align: center; padding: 60px; background: rgba(17, 17, 17, 0.4); backdrop-filter: blur(15px); border-radius: 30px; border: 1px solid rgba(255,255,255,0.1); position: relative; z-index: 2; }
+.hero-overlay h1 { font-size: 3.2rem; margin-bottom: 20px; }
+.hero-overlay h1 span { color: var(--primary); }
+
+.btn-primary, .btn-secondary { padding: 15px 35px; border-radius: 50px; font-weight: 600; margin: 10px; display: inline-block; text-decoration: none; transition: 0.4s; }
+.btn-primary { background: var(--primary); color: white; }
+.btn-secondary { border: 2px solid white; color: white; }
 
 /* --- 4. BİZ KİMİZ / HAKKIMIZDA --- */
 .about-section { padding: 120px 10%; text-align: center; }
@@ -123,15 +131,7 @@ nav {
 .s-card:hover { transform: translateY(-15px); border-color: var(--primary); background: #222; }
 .s-card i { font-size: 3.5rem; color: var(--primary); margin-bottom: 25px; }
 
-/* --- 6. HERO & GENEL --- */
-.hero-overlay { text-align: center; padding: 60px; background: rgba(17, 17, 17, 0.4); backdrop-filter: blur(15px); border-radius: 30px; border: 1px solid rgba(255,255,255,0.1); position: relative; z-index: 2; }
-.hero-overlay h1 { font-size: 3.2rem; margin-bottom: 20px; }
-.hero-overlay h1 span { color: var(--primary); }
-
-.btn-primary, .btn-secondary { padding: 15px 35px; border-radius: 50px; font-weight: 600; margin: 10px; display: inline-block; text-decoration: none; transition: 0.4s; }
-.btn-primary { background: var(--primary); color: white; }
-.btn-secondary { border: 2px solid white; color: white; }
-
+/* --- 6. GENEL EFEKTLER --- */
 .reveal { opacity: 0; transform: translateY(50px); transition: 1s ease; }
 .reveal.active { opacity: 1; transform: translateY(0); }
 .page-content { padding-top: 180px !important; min-height: 100vh; }
@@ -155,11 +155,37 @@ nav {
 .work-item:hover img { transform: scale(1.1); }
 .work-item:hover { border-color: var(--primary); }
 
-/* --- 9. FOOTER --- */
+/* --- 9. SABİT WHATSAPP BUTONU --- */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 32px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    background-color: #20ba5a;
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+}
+
+/* --- 10. FOOTER --- */
 footer { background: #080808; padding: 80px 10% 30px; border-top: 1px solid rgba(249, 115, 22, 0.2); margin-top: 50px; position: relative; z-index: 2; }
 .footer-bottom { text-align: center; color: #444; font-size: 0.8rem; padding-top: 30px; }
 
-/* --- 10. MOBİL RESPONSIVE --- */
+/* --- 11. MOBİL RESPONSIVE --- */
 @media (max-width: 768px) {
     .menu-toggle { display: block; }
 
@@ -185,4 +211,12 @@ footer { background: #080808; padding: 80px 10% 30px; border-top: 1px solid rgba
 
     .hero-overlay h1 { font-size: 2.2rem; }
     .stats { gap: 40px; }
+    
+    .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 26px;
+    }
 }

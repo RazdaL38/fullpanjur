@@ -3,10 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projelerimiz - FullPanjur</title>
+    <title>İletişim - FullPanjur</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- İletişim Sayfası Garanti Stiller -->
+    <style>
+        .contact-cards-container {
+            display: flex !important;
+            justify-content: center !important;
+            align-items: stretch !important;
+            flex-wrap: wrap !important;
+            gap: 25px !important;
+            max-width: 1200px !important;
+            margin: 0 auto 40px !important;
+            padding: 0 20px !important;
+        }
+        .contact-card {
+            background: #1a1d23 !important;
+            padding: 35px 25px !important;
+            border-radius: 20px !important;
+            border: 1px solid rgba(247, 91, 7, 0.3) !important;
+            flex: 1 1 280px !important;
+            max-width: 360px !important;
+            text-align: center !important;
+            transition: 0.3s ease !important;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3) !important;
+        }
+        .contact-card:hover {
+            border-color: #f75b07 !important;
+            transform: translateY(-8px) !important;
+            box-shadow: 0 15px 35px rgba(247, 91, 7, 0.2) !important;
+        }
+        .contact-card i {
+            font-size: 2.5rem !important;
+            color: #f75b07 !important;
+            margin-bottom: 20px !important;
+            display: block !important;
+        }
+        .contact-card h3 {
+            color: #ffffff !important;
+            font-size: 1.3rem !important;
+            margin-bottom: 10px !important;
+        }
+        .contact-card p {
+            color: #cccccc !important;
+            font-size: 1rem !important;
+            margin: 0 !important;
+        }
+    </style>
 </head>
 <body>
 
@@ -28,39 +74,45 @@
             <li><a href="index.html">Anasayfa</a></li>
             <li><a href="hakkimizda.html">Hakkımızda</a></li>
             <li><a href="hizmetler.html">Hizmetlerimiz</a></li>
-            <li><a href="galeri.html" style="color: var(--primary); font-weight: bold;">Projelerimiz</a></li>
-            <li><a href="iletisim.html">İletişim</a></li>
+            <li><a href="galeri.html">Projelerimiz</a></li>
+            <li><a href="iletisim.html" style="color: var(--primary); font-weight: bold;">İletişim</a></li>
         </ul>
     </nav>
 
-    <!-- GALERİ / PROJELER -->
-    <section class="page-content reveal active">
-        <h2 style="color: var(--primary); font-size: 2.8rem; text-align: center; margin-bottom: 40px;">TAMAMLATAN PROJELERİMİZ</h2>
+    <!-- İLETİŞİM BÖLÜMÜ -->
+    <section class="page-content reveal active" style="padding-top: 150px;">
+        <h2 style="color: var(--primary); font-size: 2.8rem; text-align: center; margin-bottom: 40px;">BİZE ULAŞIN</h2>
 
-        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 25px; max-width: 1200px; margin: 0 auto; padding: 0 20px;">
-            <div class="work-item" style="flex: 1 1 300px; max-width: 360px;">
-                <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=800" alt="Otomatik Panjur">
-                <div class="work-overlay">Otomatik Panjur Sistemi</div>
+        <!-- İletişim Kartları -->
+        <div class="contact-cards-container">
+            <div class="contact-card">
+                <i class="fas fa-phone"></i>
+                <h3>Telefon</h3>
+                <p>+90 (212) 000 00 00</p>
             </div>
-            <div class="work-item" style="flex: 1 1 300px; max-width: 360px;">
-                <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=800" alt="Motorlu Kepenk">
-                <div class="work-overlay">Motorlu Garaj Kapanı & Kepenk</div>
+            <div class="contact-card">
+                <i class="fas fa-envelope"></i>
+                <h3>E-Posta</h3>
+                <p>info@fullpanjur.com</p>
             </div>
-            <div class="work-item" style="flex: 1 1 300px; max-width: 360px;">
-                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800" alt="Cam Balkon">
-                <div class="work-overlay">Katlanır Cam Balkon Uygulaması</div>
+            <div class="contact-card">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>Adres</h3>
+                <p>Ümraniye / İstanbul, Türkiye</p>
             </div>
-            <div class="work-item" style="flex: 1 1 300px; max-width: 360px;">
-                <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?q=80&w=800" alt="Sineklik Sistemleri">
-                <div class="work-overlay">Pileli Sineklik Sistemleri</div>
-            </div>
-            <div class="work-item" style="flex: 1 1 300px; max-width: 360px;">
-                <img src="https://images.unsplash.com/photo-1600573472591-401b6f06a362?q=80&w=800" alt="Alüminyum Doğrama">
-                <div class="work-overlay">Alüminyum Doğrama & Cephe</div>
-            </div>
-            <div class="work-item" style="flex: 1 1 300px; max-width: 360px;">
-                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=800" alt="Tente Sistemleri">
-                <div class="work-overlay">Mafsallı Tente & Gölgelendirme</div>
+        </div>
+
+        <!-- Google Harita (Maps) -->
+        <div style="max-width: 1200px; margin: 40px auto 0; padding: 0 20px;">
+            <div style="height: 450px; width: 100%; border-radius: 20px; overflow: hidden; border: 1px solid rgba(247, 91, 7, 0.3);">
+                <iframe 
+                    src="https://maps.google.com/maps?q=Full%20Panjur%20Dudullu%20OSB&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
             </div>
         </div>
     </section>

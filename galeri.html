@@ -12,56 +12,139 @@
         /* Filtre Butonları */
         .filter-container {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
         }
         .filter-btn {
             background: transparent;
             border: 2px solid #f75b07;
             color: #fff;
-            padding: 8px 20px;
+            padding: 10px 25px;
             margin: 5px;
-            border-radius: 25px;
+            border-radius: 30px;
             cursor: pointer;
             font-family: 'Poppins', sans-serif;
             font-weight: 600;
-            transition: 0.3s;
+            transition: all 0.4s ease;
         }
         .filter-btn:hover, .filter-btn.active-btn {
             background: #f75b07;
             color: #fff;
+            box-shadow: 0 5px 15px rgba(247, 91, 7, 0.4);
+            transform: translateY(-2px);
         }
 
-        /* Galeri Izgarası */
+        /* Galeri Izgarası & Hover Efektleri */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
             max-width: 1200px;
-            margin: 0 auto 40px;
+            margin: 0 auto 50px;
             padding: 0 20px;
         }
         .gallery-item {
             position: relative;
             border-radius: 15px;
             overflow: hidden;
-            border: 1px solid rgba(247, 91, 7, 0.3);
+            border: 1px solid rgba(247, 91, 7, 0.2);
             background: #1a1d23;
-            transition: 0.3s ease;
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+        
+        /* Resim Zoom Animasyonu */
+        .img-wrapper {
+            overflow: hidden;
         }
         .gallery-item img {
             width: 100%;
-            height: 250px;
+            height: 280px;
             object-fit: cover;
             display: block;
+            transition: transform 0.6s ease;
         }
+        .gallery-item:hover {
+            border-color: #f75b07;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.5), 0 0 15px rgba(247, 91, 7, 0.3);
+            transform: translateY(-8px);
+        }
+        .gallery-item:hover img {
+            transform: scale(1.1); /* Resim hafifçe büyür */
+        }
+        
+        /* Bilgi Kısmı */
         .gallery-info {
-            padding: 15px;
+            padding: 20px 15px;
             text-align: center;
+            background: linear-gradient(to top, #1a1d23, #23272f);
+            position: relative;
+            z-index: 2;
         }
         .gallery-info h3 {
             color: #fff;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             margin-bottom: 5px;
+        }
+        .gallery-info i {
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            background: #f75b07;
+            color: #fff;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 50%;
+            font-size: 1.1rem;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+            transition: 0.3s;
+        }
+        .gallery-item:hover .gallery-info i {
+            transform: rotate(90deg);
+        }
+
+        /* Lightbox (Tam Ekran Resim) Stilleri */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            padding-top: 60px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .lightbox.show {
+            opacity: 1;
+        }
+        .lightbox-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 80vh;
+            border-radius: 10px;
+            box-shadow: 0 0 30px rgba(247, 91, 7, 0.5);
+            transform: scale(0.8);
+            transition: transform 0.3s ease;
+        }
+        .lightbox.show .lightbox-content {
+            transform: scale(1);
+        }
+        .close-lightbox {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .close-lightbox:hover {
+            color: #f75b07;
         }
     </style>
 </head>
@@ -88,46 +171,64 @@
         
         <!-- Kategori Butonları -->
         <div class="filter-container">
-            <button class="filter-btn active-btn" data-filter="hepsi">Tümü</button>
+            <button class="filter-btn active-btn" data-filter="hepsi">Tüm Projeler</button>
             <button class="filter-btn" data-filter="panjur">Panjur</button>
             <button class="filter-btn" data-filter="cambalkon">Cam Balkon</button>
             <button class="filter-btn" data-filter="giyotin">Giyotin</button>
-            <button class="filter-btn" data-filter="makasli">Makaslı Panjur</button>
+            <button class="filter-btn" data-filter="kepenk">Kepenk</button>
         </div>
 
         <!-- Resimler -->
         <div class="gallery-grid">
             
-            <!-- Panjur Örneği -->
             <div class="gallery-item" data-category="panjur">
-                <img src="https://via.placeholder.com/400x300?text=Panjur+Resmi+1" alt="Panjur">
-                <div class="gallery-info"><h3>Otomatik Panjur</h3></div>
-            </div>
-            <div class="gallery-item" data-category="panjur">
-                <img src="https://via.placeholder.com/400x300?text=Panjur+Resmi+2" alt="Panjur">
-                <div class="gallery-info"><h3>Alüminyum Panjur</h3></div>
+                <div class="img-wrapper">
+                    <img src="https://via.placeholder.com/600x450?text=Panjur+Resmi+1" alt="Panjur">
+                </div>
+                <div class="gallery-info">
+                    <i class="fas fa-expand-arrows-alt"></i>
+                    <h3>Otomatik Panjur Uygulaması</h3>
+                </div>
             </div>
 
-            <!-- Cam Balkon Örneği -->
             <div class="gallery-item" data-category="cambalkon">
-                <img src="https://via.placeholder.com/400x300?text=Cam+Balkon+1" alt="Cam Balkon">
-                <div class="gallery-info"><h3>Katlanır Cam Balkon</h3></div>
+                <div class="img-wrapper">
+                    <img src="https://via.placeholder.com/600x450?text=Cam+Balkon" alt="Cam Balkon">
+                </div>
+                <div class="gallery-info">
+                    <i class="fas fa-expand-arrows-alt"></i>
+                    <h3>Katlanır Cam Balkon</h3>
+                </div>
             </div>
 
-            <!-- Giyotin Örneği -->
             <div class="gallery-item" data-category="giyotin">
-                <img src="https://via.placeholder.com/400x300?text=Giyotin+Cam" alt="Giyotin">
-                <div class="gallery-info"><h3>Motorlu Giyotin Cam</h3></div>
+                <div class="img-wrapper">
+                    <img src="https://via.placeholder.com/600x450?text=Giyotin+Cam" alt="Giyotin">
+                </div>
+                <div class="gallery-info">
+                    <i class="fas fa-expand-arrows-alt"></i>
+                    <h3>Motorlu Giyotin Cam Sistemi</h3>
+                </div>
             </div>
 
-            <!-- Makaslı Panjur Örneği -->
-            <div class="gallery-item" data-category="makasli">
-                <img src="https://via.placeholder.com/400x300?text=Makasli+Panjur" alt="Makaslı Panjur">
-                <div class="gallery-info"><h3>Dışa Açılır Makaslı Panjur</h3></div>
+            <div class="gallery-item" data-category="kepenk">
+                <div class="img-wrapper">
+                    <img src="https://via.placeholder.com/600x450?text=Garaj+Kepenk" alt="Kepenk">
+                </div>
+                <div class="gallery-info">
+                    <i class="fas fa-expand-arrows-alt"></i>
+                    <h3>Alüminyum Garaj Kepengi</h3>
+                </div>
             </div>
 
         </div>
     </section>
+
+    <!-- LIGHTBOX (Tam Ekran Görsel Aracı) -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
 
     <!-- FOOTER -->
     <footer>
@@ -136,30 +237,68 @@
         </div>
     </footer>
 
+    <!-- SABİT WHATSAPP BUTONU -->
+    <a href="https://wa.me/905495011919" class="whatsapp-float" target="_blank" title="WhatsApp ile İletişime Geçin">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <script src="script.js"></script>
     
-    <!-- Filtreleme Scripti -->
+    <!-- Filtreleme ve Lightbox Scripti -->
     <script>
+        // --- 1. Filtreleme İşlemi ---
         const filterBtns = document.querySelectorAll('.filter-btn');
         const galleryItems = document.querySelectorAll('.gallery-item');
 
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                // Aktif buton rengini değiştir
                 filterBtns.forEach(button => button.classList.remove('active-btn'));
                 btn.classList.add('active-btn');
 
                 const filterValue = btn.getAttribute('data-filter');
 
-                // Resimleri göster/gizle
                 galleryItems.forEach(item => {
-                    if (filterValue === 'hepsi' || item.getAttribute('data-category') === filterValue) {
-                        item.style.display = 'block';
-                    } else {
-                        item.style.display = 'none';
-                    }
+                    item.style.transform = 'scale(0.8)';
+                    item.style.opacity = '0';
+                    
+                    setTimeout(() => {
+                        if (filterValue === 'hepsi' || item.getAttribute('data-category') === filterValue) {
+                            item.style.display = 'block';
+                            setTimeout(() => {
+                                item.style.transform = 'scale(1)';
+                                item.style.opacity = '1';
+                            }, 50);
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    }, 300);
                 });
             });
+        });
+
+        // --- 2. Lightbox (Tam Ekran Yapma) İşlemi ---
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const closeBtn = document.querySelector('.close-lightbox');
+
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const imgSrc = item.querySelector('img').getAttribute('src');
+                lightbox.style.display = 'block';
+                setTimeout(() => lightbox.classList.add('show'), 10);
+                lightboxImg.src = imgSrc;
+            });
+        });
+
+        // Çarpıya veya boşluğa basınca kapat
+        const closeLightbox = () => {
+            lightbox.classList.remove('show');
+            setTimeout(() => lightbox.style.display = 'none', 300);
+        };
+
+        closeBtn.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (e) => {
+            if (e.target !== lightboxImg) closeLightbox();
         });
     </script>
 </body>

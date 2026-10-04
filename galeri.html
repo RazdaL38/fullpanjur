@@ -3,54 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>İletişim - FullPanjur</title>
+    <title>Projelerimiz - FullPanjur</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     
-    <!-- İletişim Sayfası Garanti Stiller -->
     <style>
-        .contact-cards-container {
-            display: flex !important;
-            justify-content: center !important;
-            align-items: stretch !important;
-            flex-wrap: wrap !important;
-            gap: 25px !important;
-            max-width: 1200px !important;
-            margin: 0 auto 40px !important;
-            padding: 0 20px !important;
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
         }
-        .contact-card {
-            background: #1a1d23 !important;
-            padding: 35px 25px !important;
-            border-radius: 20px !important;
-            border: 1px solid rgba(247, 91, 7, 0.3) !important;
-            flex: 1 1 280px !important;
-            max-width: 360px !important;
-            text-align: center !important;
-            transition: 0.3s ease !important;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3) !important;
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(247, 91, 7, 0.3);
+            background: #1a1d23;
+            transition: 0.3s ease;
         }
-        .contact-card:hover {
-            border-color: #f75b07 !important;
-            transform: translateY(-8px) !important;
-            box-shadow: 0 15px 35px rgba(247, 91, 7, 0.2) !important;
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            border-color: #f75b07;
+            box-shadow: 0 10px 25px rgba(247, 91, 7, 0.2);
         }
-        .contact-card i {
-            font-size: 2.5rem !important;
-            color: #f75b07 !important;
-            margin-bottom: 20px !important;
-            display: block !important;
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
         }
-        .contact-card h3 {
-            color: #ffffff !important;
-            font-size: 1.3rem !important;
-            margin-bottom: 10px !important;
+        .gallery-info {
+            padding: 15px;
+            text-align: center;
         }
-        .contact-card p {
-            color: #cccccc !important;
-            font-size: 1rem !important;
-            margin: 0 !important;
+        .gallery-info h3 {
+            color: #fff;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        .gallery-info p {
+            color: #f75b07;
+            font-size: 0.9rem;
+            margin: 0;
         }
     </style>
 </head>
@@ -74,45 +72,37 @@
             <li><a href="index.html">Anasayfa</a></li>
             <li><a href="hakkimizda.html">Hakkımızda</a></li>
             <li><a href="hizmetler.html">Hizmetlerimiz</a></li>
-            <li><a href="galeri.html">Projelerimiz</a></li>
-            <li><a href="iletisim.html" style="color: var(--primary); font-weight: bold;">İletişim</a></li>
+            <li><a href="galeri.html" style="color: var(--primary); font-weight: bold;">Projelerimiz</a></li>
+            <li><a href="iletisim.html">İletişim</a></li>
         </ul>
     </nav>
 
-    <!-- İLETİŞİM BÖLÜMÜ -->
+    <!-- GALERİ BÖLÜMÜ -->
     <section class="page-content reveal active" style="padding-top: 150px;">
-        <h2 style="color: var(--primary); font-size: 2.8rem; text-align: center; margin-bottom: 40px;">BİZE ULAŞIN</h2>
+        <h2 style="color: var(--primary); font-size: 2.8rem; text-align: center;">TAMAMLANAN PROJELERİMİZ</h2>
+        <p style="text-align: center; color: #ccc; margin-top: 10px;">Müşterilerimize teslim ettiğimiz kaliteli panjur ve kepenk uygulamalarımız.</p>
 
-        <!-- İletişim Kartları -->
-        <div class="contact-cards-container">
-            <div class="contact-card">
-                <i class="fas fa-phone"></i>
-                <h3>Telefon</h3>
-                <p>+90 (212) 000 00 00</p>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/400x300?text=Otomatik+Panjur" alt="Otomatik Panjur">
+                <div class="gallery-info">
+                    <h3>Otomatik Monoblok Panjur</h3>
+                    <p>Ümraniye / Villa Projesi</p>
+                </div>
             </div>
-            <div class="contact-card">
-                <i class="fas fa-envelope"></i>
-                <h3>E-Posta</h3>
-                <p>info@fullpanjur.com</p>
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/400x300?text=Garaj+Kepenk" alt="Garaj Kepenk">
+                <div class="gallery-info">
+                    <h3>Motorlu Garaj Kepenk</h3>
+                    <p>Ataşehir / Site Projesi</p>
+                </div>
             </div>
-            <div class="contact-card">
-                <i class="fas fa-map-marker-alt"></i>
-                <h3>Adres</h3>
-                <p>Ümraniye / İstanbul, Türkiye</p>
-            </div>
-        </div>
-
-        <!-- Google Harita (Maps) -->
-        <div style="max-width: 1200px; margin: 40px auto 0; padding: 0 20px;">
-            <div style="height: 450px; width: 100%; border-radius: 20px; overflow: hidden; border: 1px solid rgba(247, 91, 7, 0.3);">
-                <iframe 
-                    src="https://maps.google.com/maps?q=Full%20Panjur%20Dudullu%20OSB&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-                    width="100%" 
-                    height="100%" 
-                    style="border:0;" 
-                    allowfullscreen="" 
-                    loading="lazy">
-                </iframe>
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/400x300?text=Aluminyum+Panjur" alt="Alüminyum Panjur">
+                <div class="gallery-info">
+                    <h3>Pencere Panjur Sistemi</h3>
+                    <p>Çekmeköy / Konut Projesi</p>
+                </div>
             </div>
         </div>
     </section>

@@ -9,12 +9,35 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <style>
+        /* Filtre Butonları */
+        .filter-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .filter-btn {
+            background: transparent;
+            border: 2px solid #f75b07;
+            color: #fff;
+            padding: 8px 20px;
+            margin: 5px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .filter-btn:hover, .filter-btn.active-btn {
+            background: #f75b07;
+            color: #fff;
+        }
+
+        /* Galeri Izgarası */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
             max-width: 1200px;
-            margin: 40px auto;
+            margin: 0 auto 40px;
             padding: 0 20px;
         }
         .gallery-item {
@@ -24,11 +47,6 @@
             border: 1px solid rgba(247, 91, 7, 0.3);
             background: #1a1d23;
             transition: 0.3s ease;
-        }
-        .gallery-item:hover {
-            transform: translateY(-5px);
-            border-color: #f75b07;
-            box-shadow: 0 10px 25px rgba(247, 91, 7, 0.2);
         }
         .gallery-item img {
             width: 100%;
@@ -45,22 +63,9 @@
             font-size: 1.1rem;
             margin-bottom: 5px;
         }
-        .gallery-info p {
-            color: #f75b07;
-            font-size: 0.9rem;
-            margin: 0;
-        }
     </style>
 </head>
 <body>
-
-    <!-- PRELOADER -->
-    <div id="preloader">
-        <div style="text-align: center;">
-            <img src="logo.png" alt="FullPanjur Logo" class="loader-logo">
-            <div class="loader-bar"></div>
-        </div>
-    </div>
 
     <!-- NAVBAR -->
     <nav>
@@ -79,31 +84,48 @@
 
     <!-- GALERİ BÖLÜMÜ -->
     <section class="page-content reveal active" style="padding-top: 150px;">
-        <h2 style="color: var(--primary); font-size: 2.8rem; text-align: center;">TAMAMLANAN PROJELERİMİZ</h2>
-        <p style="text-align: center; color: #ccc; margin-top: 10px;">Müşterilerimize teslim ettiğimiz kaliteli panjur ve kepenk uygulamalarımız.</p>
+        <h2 style="color: var(--primary); font-size: 2.8rem; text-align: center;">PROJELERİMİZ</h2>
+        
+        <!-- Kategori Butonları -->
+        <div class="filter-container">
+            <button class="filter-btn active-btn" data-filter="hepsi">Tümü</button>
+            <button class="filter-btn" data-filter="panjur">Panjur</button>
+            <button class="filter-btn" data-filter="cambalkon">Cam Balkon</button>
+            <button class="filter-btn" data-filter="giyotin">Giyotin</button>
+            <button class="filter-btn" data-filter="makasli">Makaslı Panjur</button>
+        </div>
 
+        <!-- Resimler -->
         <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="https://via.placeholder.com/400x300?text=Otomatik+Panjur" alt="Otomatik Panjur">
-                <div class="gallery-info">
-                    <h3>Otomatik Monoblok Panjur</h3>
-                    <p>Ümraniye / Villa Projesi</p>
-                </div>
+            
+            <!-- Panjur Örneği -->
+            <div class="gallery-item" data-category="panjur">
+                <img src="https://via.placeholder.com/400x300?text=Panjur+Resmi+1" alt="Panjur">
+                <div class="gallery-info"><h3>Otomatik Panjur</h3></div>
             </div>
-            <div class="gallery-item">
-                <img src="https://via.placeholder.com/400x300?text=Garaj+Kepenk" alt="Garaj Kepenk">
-                <div class="gallery-info">
-                    <h3>Motorlu Garaj Kepenk</h3>
-                    <p>Ataşehir / Site Projesi</p>
-                </div>
+            <div class="gallery-item" data-category="panjur">
+                <img src="https://via.placeholder.com/400x300?text=Panjur+Resmi+2" alt="Panjur">
+                <div class="gallery-info"><h3>Alüminyum Panjur</h3></div>
             </div>
-            <div class="gallery-item">
-                <img src="https://via.placeholder.com/400x300?text=Aluminyum+Panjur" alt="Alüminyum Panjur">
-                <div class="gallery-info">
-                    <h3>Pencere Panjur Sistemi</h3>
-                    <p>Çekmeköy / Konut Projesi</p>
-                </div>
+
+            <!-- Cam Balkon Örneği -->
+            <div class="gallery-item" data-category="cambalkon">
+                <img src="https://via.placeholder.com/400x300?text=Cam+Balkon+1" alt="Cam Balkon">
+                <div class="gallery-info"><h3>Katlanır Cam Balkon</h3></div>
             </div>
+
+            <!-- Giyotin Örneği -->
+            <div class="gallery-item" data-category="giyotin">
+                <img src="https://via.placeholder.com/400x300?text=Giyotin+Cam" alt="Giyotin">
+                <div class="gallery-info"><h3>Motorlu Giyotin Cam</h3></div>
+            </div>
+
+            <!-- Makaslı Panjur Örneği -->
+            <div class="gallery-item" data-category="makasli">
+                <img src="https://via.placeholder.com/400x300?text=Makasli+Panjur" alt="Makaslı Panjur">
+                <div class="gallery-info"><h3>Dışa Açılır Makaslı Panjur</h3></div>
+            </div>
+
         </div>
     </section>
 
@@ -114,11 +136,31 @@
         </div>
     </footer>
 
-    <!-- SABİT WHATSAPP BUTONU -->
-    <a href="https://wa.me/905495011919" class="whatsapp-float" target="_blank" title="WhatsApp ile İletişime Geçin">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
     <script src="script.js"></script>
+    
+    <!-- Filtreleme Scripti -->
+    <script>
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Aktif buton rengini değiştir
+                filterBtns.forEach(button => button.classList.remove('active-btn'));
+                btn.classList.add('active-btn');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                // Resimleri göster/gizle
+                galleryItems.forEach(item => {
+                    if (filterValue === 'hepsi' || item.getAttribute('data-category') === filterValue) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
